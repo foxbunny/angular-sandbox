@@ -7,7 +7,7 @@ angular.module('services.store', [])
     $rootScope.map = mapStateToController;
 
     function updateState(updater) {
-      $rootScope.state = Object.assign({}, $rootScope.state, updater($rootScope.state));
+      $rootScope.state = updater($rootScope.state);
     }
 
     function mapStateToController(mapper) {
