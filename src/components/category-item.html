@@ -1,0 +1,13 @@
+<li>
+  <div ng-hide="category.editing">
+    <a href="#" ng-hide="category.selected === item.id" ng-click="category.selectCategory(item.id)">{{item.name}}</a>
+    <span href="#" ng-show="category.selected === item.id">{{item.name}}</span>
+    <button ng-click="category.startEditing(item.id, item.name)">edit</button>
+  </div>
+  <div ng-show="category.editing">
+    <form name="categoriesEditForm" ng-submit="categoriesEditForm.$valid && category.finishEditing()" novalidate>
+      <input type="text" ng-model="category.editing.name" required>
+      <button>Save</button>
+    </form>
+  </div>
+</li>
